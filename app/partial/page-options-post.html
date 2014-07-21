@@ -1,0 +1,89 @@
+&lt;!-- noindex --&gt;
+&lt;div id="post-page-options" class="page-options"&gt;
+	&lt;ul&gt;
+		&lt;li class="share"&gt;
+			&lt;h2&gt;Share:&lt;/h2&gt;
+			&lt;a class="facebook" href="https://www.qld.gov.au/share/?via=facebook&amp;title=&lt;?php print (empty($_SERVER['title'])) ? '' : urlencode($_SERVER['title']); ?&gt;" title="Share using Facebook"&gt;&lt;span&gt;Facebook&lt;/span&gt;&lt;/a&gt;
+			&lt;a class="twitter" href="https://www.qld.gov.au/share/?via=twitter&amp;title=&lt;?php print (empty($_SERVER['title'])) ? '' : urlencode($_SERVER['title']); ?&gt;" title="Share using Twitter"&gt;&lt;span&gt;Twitter&lt;/span&gt;&lt;/a&gt;
+			&lt;a class="linkedin" href="https://www.qld.gov.au/share/?via=linkedin&amp;title=&lt;?php print (empty($_SERVER['title'])) ? '' : urlencode($_SERVER['title']); ?&gt;" title="Share using LinkedIn"&gt;&lt;span&gt;LinkedIn&lt;/span&gt;&lt;/a&gt;
+			&lt;a class="share" href="https://www.qld.gov.au/share/?title=&lt;?php print (empty($_SERVER['title'])) ? '' : urlencode($_SERVER['title']); ?&gt;" title="Share using another service&hellip;"&gt;&lt;span&gt;More&lt;/span&gt;&lt;/a&gt;
+		&lt;/li&gt;
+	&lt;/ul&gt;
+&lt;/div&gt;
+
+&lt;div id="page-feedback"&gt;
+	&lt;form method="post" action="https://www.qld.gov.au/assets/apps/feedback/feedback.jsp" class="form"&gt;
+
+		&lt;h2&gt;Page feedback&lt;/h2&gt;
+
+		&lt;div id="page-feedback-privacy" class="preamble"&gt;
+			&lt;h3&gt;Your privacy&lt;/h3&gt;
+			&lt;p&gt;Information collected through this form is used to improve this website.&lt;/p&gt;
+			&lt;p&gt;Any information you submit that could identify you (e.g. name, email address) will be stored securely, and destroyed after we process your feedback.&lt;/p&gt;
+		&lt;/div&gt;
+
+		&lt;ol class="questions"&gt;
+			&lt;li id="page-was-useful"&gt;
+				&lt;fieldset&gt;
+					&lt;legend&gt;
+						&lt;span class="label"&gt;This page was&lt;/span&gt;
+					&lt;/legend&gt;
+					&lt;ul class="choices compact"&gt;
+						&lt;li&gt;
+							&lt;input type="radio" name="useful" id="page-was-useful-yes" value="yes" /&gt;
+							&lt;label for="page-was-useful-yes"&gt;Useful&lt;/label&gt;
+						&lt;/li&gt;
+						&lt;li&gt;
+							&lt;input type="radio" name="useful" id="page-was-useful-no" value="no" /&gt;
+							&lt;label for="page-was-useful-no"&gt;Not useful&lt;/label&gt;
+						&lt;/li&gt;
+					&lt;/ul&gt;
+				&lt;/fieldset&gt;
+			&lt;/li&gt;
+			&lt;li class="instruction"&gt;
+				&lt;p&gt;We want this information to be the best it can be and we know we can&rsquo;t do it without you.
+				Let us know what you thought of this page and what other information you would like to see.&lt;/p&gt;
+				&lt;p&gt;We do not reply to feedback. &lt;a href="https://www.qld.gov.au/contact-us/"&gt;Contact us if you need a response&lt;/a&gt;.&lt;/p&gt;
+			&lt;/li&gt;
+
+			&lt;li&gt;
+				&lt;label for="feedback-comments"&gt;
+					&lt;span class="label"&gt;Feedback about this page&lt;/span&gt;
+				&lt;/label&gt;
+				&lt;textarea name="comments" id="feedback-comments" cols="50" rows="7"&gt;&lt;/textarea&gt;
+			&lt;/li&gt;
+
+			&lt;li class="section"&gt;
+				&lt;fieldset id="feedback-contact"&gt;
+					&lt;legend&gt;
+						&lt;span class="h3"&gt;Contact (optional)&lt;/span&gt;
+					&lt;/legend&gt;
+					&lt;ol class="questions"&gt;
+						&lt;li&gt;
+							&lt;label for="feedback-contact-input"&gt;
+								&lt;span class="label"&gt;Please provide your &lt;strong&gt;phone number&lt;/strong&gt; or &lt;strong&gt;email address&lt;/strong&gt; if you are happy for us to contact you with any follow-up questions&lt;/span&gt;
+							&lt;/label&gt;
+							&lt;input type="text" value="" name="contact" id="feedback-contact-input" size="40" /&gt;
+						&lt;/li&gt;
+					&lt;/ol&gt;
+				&lt;/fieldset&gt;
+			&lt;/li&gt;
+
+			&lt;li id="feedback-captcha-container"&gt;
+				&lt;label for="feedback-captcha"&gt;Please leave this blank (this helps us identify automatic spam)&lt;/label&gt;
+				&lt;input type="text" name="captcha" id="feedback-captcha" value="" /&gt;
+			&lt;/li&gt;
+
+			&lt;li class="footer"&gt;
+				&lt;input type="hidden" name="franchise" id="franchise" value="&lt;?php print (empty($_SERVER['franchise'])) ? '' : addslashes(htmlspecialchars($_SERVER['franchise'])); ?&gt;" /&gt;
+				&lt;input type="hidden" name="page-title" id="page-title" value="&lt;?php print (empty($_SERVER['title'])) ? '' : addslashes(htmlspecialchars($_SERVER['title'])); ?&gt;" /&gt;
+				&lt;input type="hidden" name="page-url" value="&lt;?php print (empty($_SERVER['REQUEST_URI'])) ? '' : addslashes(htmlspecialchars(strip_tags($_SERVER['REQUEST_URI']))); ?&gt;" /&gt;
+				&lt;input type="hidden" name="page-referer" value="&lt;?php print (empty($_SERVER['HTTP_REFERER'])) ? '' : addslashes(htmlspecialchars(strip_tags($_SERVER['HTTP_REFERER']))); ?&gt;" /&gt;
+				&lt;ul class="actions"&gt;
+					&lt;li&gt;&lt;strong&gt;&lt;input type="submit" value="Submit feedback" /&gt;&lt;/strong&gt;&lt;/li&gt;
+				&lt;/ul&gt;
+			&lt;/li&gt;
+		&lt;/ol&gt;
+	&lt;/form&gt;
+&lt;/div&gt;
+&lt;!-- endnoindex --&gt;

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en-AU" ng-app="templateBuilder">
+<head>
+	<meta charset="UTF-8">
+	<title>Template builder</title>
+
+	<link rel="stylesheet" href="template-builder.css">
+
+	<script src="bower_components/angular/angular.min.js"></script>
+	<script src="bower_components/angular-route/angular-route.min.js"></script>
+	<script src="template-builder.js"></script>
+</head>
+<body>
+
+	<nav>
+		<ul>
+			<li><a href="#/xssi">Apache XSSI</a></li>
+			<li><a href="#/php">PHP</a></li>
+			<li><a href="#/jinja2">Jinja2</a></li>
+		</ul>
+	</nav>
+
+
+	<main ng-controller="TemplateCtrl as template">
+		<form action="#">
+			<!-- TODO need to repeat this for3x encoding: html, attr, URL -->
+			<ol class="questions">
+				<li>
+					<fieldset>
+						<legend>
+							<span class="label">Parameter format</span>
+							<small class="hint">Enter the syntax used for parameters in {{ framework }}</small>
+						</legend>
+						<ol class="questions compact">
+							<li>
+								<label for="param-prefix">Prefix</label>
+								<input type="text" id="param-prefix" ng-trim="false" placeholder="{{">
+							</li>
+							<li><var>variableName</var></li>
+							<li>
+								<label for="param-suffix">Suffix</label>
+								<input type="text" id="param-suffix" ng-trim="false" placeholder="}}">
+							</li>
+						</ol>
+					</fieldset>
+				</li>
+
+
+				<li>
+					<label for="var-title">
+						<span class="label">Title</span>
+						<small class="hint">Name of the parameter holding the page title</small>
+					</label>
+					<input type="text" id="var-title">
+				</li>
+			</ol>
+		</form>	
+
+
+		<section ng-repeat="partial in template.partials">
+			<h2>{{ partial }}</h2>
+			<pre class="code"><span ng-include="'partial/' + partial + '.html'"></span></pre>
+		</section>
+
+	</main>
+
+
+
+</body>
+</html>
